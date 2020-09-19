@@ -12,7 +12,10 @@ export default () => {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3} className={appData.list.length === 0 ? classes.gridContent : classes.gridCard}>
+      <Grid
+        container
+        spacing={3}
+        className={appData.list.length === 0 || appData.listLoading ? classes.gridContent : classes.gridCard}>
         {appData.list.length === 0 && !appData.listLoading && <Content /> /* Page Content */}
 
         {appData.listLoading && <Loader /> /* Loader */}
