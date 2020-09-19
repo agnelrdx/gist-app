@@ -36,7 +36,7 @@ export const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  inputInput: {
+  input: {
     borderRadius: '5px',
     color: '#fff',
     height: '26px',

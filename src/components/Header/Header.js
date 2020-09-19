@@ -65,7 +65,7 @@ export default () => {
             onChange={handleChange}
             onKeyDown={handleKeyDown}
             placeholder="Search by Username"
-            classes={{ input: classes.inputInput }}
+            classes={{ input: classes.input }}
           />
         </div>
       </Toolbar>

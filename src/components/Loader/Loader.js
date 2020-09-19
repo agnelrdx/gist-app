@@ -7,9 +7,9 @@ export default () => {
   const boxes = new Array(8).fill('')
 
   return (
-    <div className={classes.loader}>
+    <div data-test="loader" className={classes.loader}>
       {boxes.map((v, k) => (
-        <div key={k} className={classes.svg}>
+        <div data-test="loader-skeleton" key={k} className={classes.svg}>
           <Skeleton variant="text" width={110} height={40} />
           <Skeleton variant="text" width={150} height={30} />
           <Skeleton variant="text" width={150} height={30} />

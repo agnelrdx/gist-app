@@ -30,7 +30,7 @@ export default () => {
 
         {appData.recentSearch
           .map((v, k) => (
-            <div key={k} className={classes.list} onClick={handleClick}>
+            <div data-test="recent-search-row" key={k} className={classes.list} onClick={handleClick}>
               <Avatar className={classes.avatar} alt={v.username} src={v.avatar}>
                 {v.username.charAt(0).toUpperCase()}
               </Avatar>
