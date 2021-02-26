@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useMemo } from 'react'
 import { initialAppData } from './config'
 
 export const gistContext = createContext()
@@ -7,5 +7,7 @@ export const GistProvider = props => {
   /* Set App data with defaults */
   const [appData, setAppData] = useState(initialAppData)
 
-  return <gistContext.Provider value={[appData, setAppData]}>{props.children}</gistContext.Provider>
+  const value = useMemo(() => [appData, setAppData], [appData])
+
+  return <gistContext.Provider value={value}>{props.children}</gistContext.Provider>
 }

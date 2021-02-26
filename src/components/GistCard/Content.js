@@ -14,7 +14,6 @@ export default () => {
           <p className={classes.note}>Try with few sample Ids (Developius, lebradley, mazudi)</p>
         </>
       )}
-
       {!appData.error.status && (
         <>
           <h3 className={classes.title}>Gist is an easy method to share snippets or excerpts of data with others</h3>

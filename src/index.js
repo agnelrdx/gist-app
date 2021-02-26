@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { GistProvider } from './utils/gistContext'
-// import App from './App'
+import { GistProvider } from './utils/gistContext'
+import App from './App'
 import Counter from './Counter'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <GistProvider>
+    <GistProvider>
       <App />
-    </GistProvider> */}
+    </GistProvider>
     <Counter />
   </React.StrictMode>,
   document.getElementById('root')

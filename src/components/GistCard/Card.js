@@ -16,7 +16,9 @@ export default () => {
     return (
       <Grid key={k} item xs={12} sm={3}>
         <Paper className={classes.paper}>
-          <h4 className={classes.cardTitle}>Gist Snippet {k + 1}</h4>
+          <h4 data-test="component-title" className={classes.cardTitle}>
+            Gist Snippet {k + 1}
+          </h4>
           <p>Created: {v.created_at.split('T')[0]}</p>
           <p>Description: {_.get(v, 'description', '') === '' ? 'NA' : v.description}</p>
           <p>
