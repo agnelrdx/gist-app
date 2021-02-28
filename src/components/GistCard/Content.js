@@ -10,13 +10,17 @@ export default () => {
     <>
       {appData.error.status && (
         <>
-          <h3 className={classes.title}>{appData.error.msg}</h3>
+          <h3 data-test="error-title" className={classes.title}>
+            {appData.error.msg}
+          </h3>
           <p className={classes.note}>Try with few sample Ids (Developius, lebradley, mazudi)</p>
         </>
       )}
       {!appData.error.status && (
         <>
-          <h3 className={classes.title}>Gist is an easy method to share snippets or excerpts of data with others</h3>
+          <h3 data-test="content-title" className={classes.title}>
+            Gist is an easy method to share snippets or excerpts of data with others
+          </h3>
           <p className={classes.note}>Enter a valid username and press enter to get the list</p>
         </>
       )}

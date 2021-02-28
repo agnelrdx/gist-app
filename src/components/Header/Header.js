@@ -13,8 +13,6 @@ export default () => {
   const [appData, setAppData] = useContext(gistContext)
   const classes = useStyles()
 
-  const handleChange = () => (inputError ? setInputError(false) : null)
-
   const handleKeyDown = async e => {
     if (e.key === 'Enter') {
       /* Validate input entry */
@@ -51,24 +49,28 @@ export default () => {
   }
 
   return (
-    <AppBar position="static" className={classes.appBar}>
-      <Toolbar>
-        <h1 className={classes.title}>GIST APP</h1>
+    <div data-test="component-header">
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <h1 data-test="app-title" className={classes.title}>
+            GIST APP {String(inputError)}
+          </h1>
 
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+
+            <InputBase
+              error={inputError}
+              onChange={() => setInputError(false)}
+              onKeyDown={e => handleKeyDown(e)}
+              placeholder="Search by Username"
+              classes={{ input: classes.input }}
+            />
           </div>
-
-          <InputBase
-            error={inputError}
-            onChange={handleChange}
-            onKeyDown={handleKeyDown}
-            placeholder="Search by Username"
-            classes={{ input: classes.input }}
-          />
-        </div>
-      </Toolbar>
-    </AppBar>
+        </Toolbar>
+      </AppBar>
+    </div>
   )
 }

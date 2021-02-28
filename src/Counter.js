@@ -36,7 +36,7 @@ export default () => {
       <button data-test="add-button" className="btn" onClick={() => setCount(count + 1)}>
         Add
       </button>
-      <button className="btn" onClick={() => setCount(prev => (prev === 0 ? 0 : prev - 1))}>
+      <button data-test="subtract-button" className="btn" onClick={() => setCount(prev => (prev === 0 ? 0 : prev - 1))}>
         Subtract
       </button>
       <p>

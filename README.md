@@ -1,4 +1,4 @@
-## GIST APP - React
+## GIST APP - React (100% code coverage)
 
 Gist is an easy method to share snippets or excerpts of data with others
 

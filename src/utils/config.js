@@ -2,7 +2,7 @@ export const API_BASE_URL = 'https://api.github.com'
 
 export const GIST_USERNAME_PATH = '/users'
 
-const defaultRecentSearch = [
+export const defaultRecentSearch = [
   {
     username: 'pmoranga',
     avatar: 'https://avatars1.githubusercontent.com/u/92371?v=4'

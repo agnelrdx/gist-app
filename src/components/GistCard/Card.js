@@ -20,10 +20,12 @@ export default () => {
             Gist Snippet {k + 1}
           </h4>
           <p>Created: {v.created_at.split('T')[0]}</p>
-          <p>Description: {_.get(v, 'description', '') === '' ? 'NA' : v.description}</p>
+          <p data-test="description">Description: {v.description || 'NA'}</p>
           <p>
             Public:
-            <span className={/true/.test(v.public) ? classes.green : classes.red}>{/true/.test(v.public) ? 'Yes' : 'No'}</span>
+            <span data-test="flag" className={/true/.test(v.public) ? classes.green : classes.red}>
+              {/true/.test(v.public) ? 'Yes' : 'No'}
+            </span>
           </p>
           <p>
             File:

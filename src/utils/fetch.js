@@ -1,3 +1,7 @@
+/**
+ * Isolated fetch to a single file for testing purpose
+ * @returns {Promise}
+ */
 export default url =>
   fetch(url)
     .then(res => {

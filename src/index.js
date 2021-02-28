@@ -4,12 +4,15 @@ import { GistProvider } from './utils/gistContext'
 import App from './App'
 import Counter from './Counter'
 
-ReactDOM.render(
+export const reactStrictMode = (
   <React.StrictMode>
     <GistProvider>
       <App />
     </GistProvider>
     <Counter />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 )
+
+export const rootElement = document.getElementById('root')
+
+ReactDOM.render(reactStrictMode, rootElement)

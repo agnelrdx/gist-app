@@ -9,5 +9,9 @@ export const GistProvider = props => {
 
   const value = useMemo(() => [appData, setAppData], [appData])
 
-  return <gistContext.Provider value={value}>{props.children}</gistContext.Provider>
+  return (
+    <gistContext.Provider value={value} {...props}>
+      {props.children}
+    </gistContext.Provider>
+  )
 }

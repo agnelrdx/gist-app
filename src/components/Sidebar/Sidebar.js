@@ -24,24 +24,26 @@ export default () => {
   }
 
   return (
-    <Card className={`${classes.root} overflow-style`}>
-      <CardContent className={classes.content}>
-        <h2 className={classes.title}>Recent Search</h2>
+    <div data-test="component-sidebar">
+      <Card className={`${classes.root} overflow-style`}>
+        <CardContent className={classes.content}>
+          <h2 className={classes.title}>Recent Search</h2>
 
-        {appData.recentSearch
-          .map((v, k) => (
-            <div data-test="recent-search-row" key={k} className={classes.list} onClick={() => handleClick(v.username)}>
-              <Avatar className={classes.avatar} alt={v.username} src={v.avatar}>
-                {v.username.charAt(0).toUpperCase()}
-              </Avatar>
-              <span className={classes.user}>
-                {v.username.charAt(0).toUpperCase()}
-                {v.username.substring(1)}
-              </span>
-            </div>
-          ))
-          .reverse()}
-      </CardContent>
-    </Card>
+          {appData.recentSearch
+            .map((v, k) => (
+              <div data-test={`recent-search-row-${k}`} key={k} className={classes.list} onClick={() => handleClick(v.username)}>
+                <Avatar className={classes.avatar} alt={v.username} src={v.avatar}>
+                  {v.username.charAt(0).toUpperCase()}
+                </Avatar>
+                <span className={classes.user}>
+                  {v.username.charAt(0).toUpperCase()}
+                  {v.username.substring(1)}
+                </span>
+              </div>
+            ))
+            .reverse()}
+        </CardContent>
+      </Card>
+    </div>
   )
 }

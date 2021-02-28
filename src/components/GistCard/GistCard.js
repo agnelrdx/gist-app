@@ -11,7 +11,7 @@ export default () => {
   const [appData] = useContext(gistContext)
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} data-test="component-gist-card">
       <Grid
         container
         spacing={3}

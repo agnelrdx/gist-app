@@ -28,12 +28,12 @@ export default props => {
         </>
       )}
 
-      {!forkData.loading && forkData.data.length === 0 && <p>No Forked Users!!</p>}
+      {!forkData.loading && forkData.data.length === 0 && <p data-test="empty-records">No Forked Users!!</p>}
 
       {!forkData.loading && forkData.data.length > 0 && (
         <AvatarGroup max={4}>
           {forkData.data.map((v, k) => (
-            <a title={v.owner.login} key={k} href={v.git_pull_url} rel="noopener noreferrer" target="_blank">
+            <a data-test="avatar" title={v.owner.login} key={k} href={v.git_pull_url} rel="noopener noreferrer" target="_blank">
               <Avatar className={classes.forkAvatar} alt={v.owner.login} src={v.owner.avatar_url}>
                 {v.owner.login.charAt(0).toUpperCase()}
               </Avatar>

@@ -4,9 +4,9 @@ import GistCard from './components/GistCard/GistCard'
 import Sidebar from './components/Sidebar/Sidebar'
 import './assets/app.css'
 
-function App() {
+export default () => {
   return (
-    <div className="App">
+    <div className="App" data-test="component-app">
       <Header />
 
       <div className="content">
@@ -16,5 +16,3 @@ function App() {
     </div>
   )
 }
-
-export default App
